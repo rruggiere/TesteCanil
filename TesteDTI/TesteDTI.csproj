@@ -48,7 +48,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Models\DogWash.cs" />
     <Compile Include="ConsoleManager.cs" />
-    <Compile Include="Models\FakePetShopDataBase.cs" />
+    <Compile Include="Models\PetShopFakeDB.cs" />
     <Compile Include="View\Menu.cs" />
     <Compile Include="Models\PetShop.cs" />
     <Compile Include="Program.cs" />

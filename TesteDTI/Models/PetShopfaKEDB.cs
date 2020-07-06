@@ -6,11 +6,11 @@ namespace TesteDTI
     /// <summary>
     /// Contém os dados genéricos fornecidos das PetShop's. 
     /// </summary>
-    public class FakePetShopDataBase
+    public class PetShopFakeDB
     {
         public readonly List<PetShop> _petShopsList;
 
-        public FakePetShopDataBase() 
+        public PetShopFakeDB() 
         {
             _petShopsList = new List<PetShop>();
 
