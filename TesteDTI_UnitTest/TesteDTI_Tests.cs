@@ -59,10 +59,12 @@ namespace TesteDTI_UnitTest
         public void TestConsoleManagerToDate()
         {
             //Testa se a validação de entrada de data do console está sendo feita corretamente.
-            Console.WriteLine(" ");
-            DateTime Expected = Convert.ToDateTime("04/07/2020");
 
-            DateTime Actual = ConsoleManager.DateVerify("04/07/2020");
+            string Today = DateTime.Now.ToString("dd/MM/yyyy");
+
+            DateTime Expected = Convert.ToDateTime(Today);
+
+            DateTime Actual = ConsoleManager.DateVerify(Today);
 
             Assert.AreEqual(Expected, Actual, "dd/MM/yyyy" ,"Fail to convert.");         
 

@@ -63,12 +63,14 @@ namespace TesteDTI
             EntryConsole = EntryConsole.Trim();
 
             DateTime Value;
+             
             do
             {        
                  ConvertResult = DateTime.TryParseExact(EntryConsole, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out Value);
 
-                if (ConvertResult == false)
+                if (ConvertResult == false || DateTime.Compare(Value, Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"))) < 0)
                 {
+                    ConvertResult = false;
                     Menu.InvalidEntry();                                   
                     EntryConsole = Console.ReadLine();
                 }           
