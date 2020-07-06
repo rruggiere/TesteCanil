@@ -10,7 +10,7 @@ namespace TesteDTI
     {
 
         /// <summary>
-        /// Cabeçalho do View.
+        /// Cabeçalho da View.
         /// </summary>
         public static void Header()
         {
@@ -50,7 +50,7 @@ namespace TesteDTI
         /// </summary>
         public static void AskExecuteAgain()
         {
-            Console.WriteLine("\n\tPressione qualquer tecla para voltar ao View principal ou digite \"exit\" para encerrar.");
+            Console.WriteLine("\n\tPressione qualquer tecla para voltar ao menu principal ou digite \"exit\" para encerrar.");
             Console.Write("\t- ");
         }
         /// <summary>
