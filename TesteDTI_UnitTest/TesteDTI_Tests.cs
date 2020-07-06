@@ -28,16 +28,16 @@ namespace TesteDTI_UnitTest
 
             double Actual = actualCalc.CalculeSpecialDay(new DogWash { Date = Convert.ToDateTime("04/07/2020"), NumBigDogs = 10, NumSmallDogs = 10 }, out _);
 
-            double Expected = 750.00;
+            double Expected = 720.00;
 
             Assert.AreEqual(Expected, Actual, 0.00, "Inconsistent calcule.");
         }
         [TestMethod]
         public void TestCalculeSpecialDayDraw()
         {
-            //Testa se o cáculo feito para os finais de semana volta corretamente a PetShop mais próxima em caso de empate. O empate será entre ChowChawgas, a mais próxima, e VaiRex.
+            //Testa se o cáculo feito para os finais de semana volta corretamente a PetShop mais próxima em caso de empate. O empate será entre ChowChawgas, a mais próxima, e Meu Canino Feliz.
             PetShopRepostiory actualCalc = new PetShopRepostiory();
-            _ = actualCalc.CalculeSpecialDay(new DogWash { Date = Convert.ToDateTime("04/07/2020"), NumBigDogs = 1, NumSmallDogs = 1 }, out string PetShopName);
+            _ = actualCalc.CalculeSpecialDay(new DogWash { Date = Convert.ToDateTime("04/07/2020"), NumBigDogs = 2, NumSmallDogs = 1 }, out string PetShopName);
 
             string Expected = "ChowChawgas"; 
 
@@ -48,7 +48,7 @@ namespace TesteDTI_UnitTest
         {
             //Testa se o cáculo feito para os dias de semana volta corretamente a PetShop mais próxima em caso de empate. O empate será entre Vai Rex, a mais próxima, e Meu Canino Feliz.
             PetShopRepostiory actualCalc = new PetShopRepostiory();
-            _ = actualCalc.CalculeSpecialDay(new DogWash { Date = Convert.ToDateTime("03/07/2020"), NumBigDogs = 2, NumSmallDogs = 1 }, out string PetShopName);
+            _ = actualCalc.CalculeSpecialDay(new DogWash { Date = Convert.ToDateTime("03/07/2020"), NumBigDogs = 1, NumSmallDogs = 2 }, out string PetShopName);
 
             string Expected = "Vai Rex";
 

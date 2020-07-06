@@ -57,7 +57,7 @@ namespace TesteDTI
             for (int i = 1; i < _DBPetShop._petShopsList.Count; i++)
             {
                 TotalValue = (_DBPetShop._petShopsList[i].SpecialDayPriceSmallDog * NewDogWash.NumSmallDogs) + (_DBPetShop._petShopsList[i].SpecialDayPriceBigDog * NewDogWash.NumBigDogs);
-                if (TemporaryValue < TotalValue)
+                if (TemporaryValue > TotalValue)
                 {
                     TemporaryValue = TotalValue;
                     FindIndex = i;

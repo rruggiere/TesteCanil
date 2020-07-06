@@ -70,8 +70,8 @@ namespace TesteDTI
 
             //Efetua a chamada de função após verificar qual o dia da semana baseado na data fornecida.
             Result = new PetShopRepostiory();
-            double result = NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Saturday) || NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Sunday) ? Result.CalculeWeek(NewDogWash, out PetShopName)
-                : Result.CalculeSpecialDay(NewDogWash, out PetShopName);
+            double result = NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Saturday) || NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Sunday) ? Result.CalculeSpecialDay(NewDogWash, out PetShopName)
+                : Result.CalculeWeek(NewDogWash, out PetShopName);
 
             Menu.Option1Result(result, PetShopName);
         }
