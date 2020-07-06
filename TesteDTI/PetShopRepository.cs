@@ -6,7 +6,7 @@ namespace TesteDTI
     public class PetShopRepostiory
     {
         #region [Properties]
-        private readonly PetShopFakeDB _DBPetShop;
+        private readonly PetShopFalseDB _DBPetShop;
         private double TotalValue { get; set; }
         private int FindIndex { get; set; }
         private double TemporaryValue { get; set; }
@@ -15,7 +15,7 @@ namespace TesteDTI
         #region [Constructor]
         public PetShopRepostiory()
         {
-            _DBPetShop = new PetShopFakeDB();
+            _DBPetShop = new PetShopFalseDB();
         }
         #endregion
 
