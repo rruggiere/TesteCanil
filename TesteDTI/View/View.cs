@@ -6,11 +6,11 @@ namespace TesteDTI
     /// <summary>
     /// Contém todas as views que podem ser vistas pelo usuário. 
     /// </summary>
-    public static class Menu
+    public static class View
     {
 
         /// <summary>
-        /// Cabeçalho do Menu.
+        /// Cabeçalho do View.
         /// </summary>
         public static void Header()
         {
@@ -42,7 +42,7 @@ namespace TesteDTI
         public static void InvalidEntry()
         {
             Console.Write("\tO valor digitado não é válido. Tente novamente.");
-            ConsoleManager.ClearPrevLine();
+            ClearPrevLine();
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace TesteDTI
         /// </summary>
         public static void AskExecuteAgain()
         {
-            Console.WriteLine("\n\tPressione qualquer tecla para voltar ao menu principal ou digite \"exit\" para encerrar.");
+            Console.WriteLine("\n\tPressione qualquer tecla para voltar ao View principal ou digite \"exit\" para encerrar.");
             Console.Write("\t- ");
         }
         /// <summary>
@@ -67,25 +67,25 @@ namespace TesteDTI
         /// </summary>
         public static void Option_1_Date()
         {
-            ConsoleManager.ClearLine();
+            ClearLine();
             Console.WriteLine("\n\tData: (dd/MM/aaaa)");
             Console.Write("\t- ");
         }
         public static void Option_1_NumSmallDogs()
         {
-            ConsoleManager.ClearLine();
+            ClearLine();
             Console.WriteLine("\tQuantidade de cães pequenos: (Número inteiro positivo.)");
             Console.Write("\t- ");
         }
         public static void Option_1_NumBigDogs()
         {
-            ConsoleManager.ClearLine();
+            ClearLine();
             Console.WriteLine("\tQuantidade de cães grandes: (Número inteiro positivo.)");
             Console.Write("\t- ");
         }
         public static void Option1Result(string Value, string PetShopName)
         {
-            ConsoleManager.ClearLine();
+            ClearLine();
             Console.WriteLine($"\n\tMelhor petshop: {PetShopName} - Preço total: {Value}");
         }
 
@@ -97,10 +97,31 @@ namespace TesteDTI
         #region [Option_2]
         public static void Option_2(List<PetShop> PetShopList)
         {
-            ConsoleManager.ClearLine();
+            ClearLine();
             Console.WriteLine();
             for (int i = 0; i < PetShopList.Count; i++)
                 Console.WriteLine($" {PetShopList[i]} ____________________________________\n");
+        }
+        #endregion
+
+        #region [ ConsoleClearLineFunctions ]
+        /// <summary>
+        /// Limpa a linha anterior do console e envia o cursor de digitação para a linha de cima.
+        /// </summary>
+        public static void ClearPrevLine()
+        {
+            Console.SetCursorPosition(9, Console.CursorTop - 1);
+            Console.Write(new string(' ', Console.WindowWidth - 1));
+            Console.SetCursorPosition(10, Console.CursorTop - 1);
+        }
+        /// <summary>
+        /// Limpa a linha atual do console e envia o cursor de digitação de volta para o começo da linha.
+        /// </summary>
+        public static void ClearLine()
+        {
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, Console.CursorTop - 1);
         }
         #endregion
     }

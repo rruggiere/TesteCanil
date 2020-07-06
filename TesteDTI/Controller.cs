@@ -13,47 +13,47 @@ namespace TesteDTI
         private PetShopRepostiory Result { get; set; }
         #endregion
         /// <summary>
-        /// Inicia o Menu de navegação.
+        /// Inicia o View de navegação.
         /// </summary>
-        public void MenuInit()
+        public void ViewInit()
         {
             Console.Clear();
-            Menu.Header();
-            Menu.Options();
-            MenuController();
+            View.Header();
+            View.Options();
+            ViewController();
         }
         /// <summary>
-        /// Executa a lógica do Menu de navegação do software.
+        /// Executa a lógica do View de navegação do software.
         /// </summary>
-        private void MenuController()
+        private void ViewController()
         {                          
             do
             {
-                //Inicializa o Menu de opções e carrega a variável InputOption com a entrada que for digitada no console.
+                //Inicializa o View de opções e carrega a variável InputOption com a entrada que for digitada no console.
                            
                 InputOption = ConsoleManager.OptionVerify(Console.ReadLine());
 
-                #region [Menu logic]
+                #region [View logic]
                 if (InputOption == 1)
                 {
                     MyDogWash = new DogWash();
 
-                    Menu.Option_1_Date();
+                    View.Option_1_Date();
                     MyDogWash.Date = ConsoleManager.DateVerify(Console.ReadLine());
 
-                    Menu.Option_1_NumSmallDogs();
+                    View.Option_1_NumSmallDogs();
                     MyDogWash.NumSmallDogs = ConsoleManager.NumDogsVerify(Console.ReadLine());
 
-                    Menu.Option_1_NumBigDogs();
+                    View.Option_1_NumBigDogs();
                     MyDogWash.NumBigDogs = ConsoleManager.NumDogsVerify(Console.ReadLine());
 
                     Option_1_Calcule(MyDogWash);
                 }
-                else if (InputOption == 2) Menu.Option_2(Option_2());
+                else if (InputOption == 2) View.Option_2(Option_2());
               
-                Menu.AskExecuteAgain();
+                View.AskExecuteAgain();
                 ConsoleManager.Exit(Console.ReadLine());
-                MenuInit();
+                ViewInit();
 
                 #endregion
             } while (!InputOption.Equals("EXIT"));        
@@ -73,7 +73,7 @@ namespace TesteDTI
             double result = NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Saturday) || NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Sunday) ? Result.CalculeSpecialDay(NewDogWash, out PetShopName)
                 : Result.CalculeWeek(NewDogWash, out PetShopName);
 
-            Menu.Option1Result(result.ToString("C", CultureInfo.CurrentCulture), PetShopName);
+            View.Option1Result(result.ToString("C", CultureInfo.CurrentCulture), PetShopName);
         }
         #endregion
         /// <summary>

@@ -40,7 +40,7 @@ namespace TesteDTI
                 if (ConvertResult == false || Value < 0 || Value > 2)
                 {
                     ConvertResult = false;
-                    Menu.InvalidEntry();                   
+                    View.InvalidEntry();                   
                     EntryConsole = Console.ReadLine();
                 }
                 
@@ -71,7 +71,7 @@ namespace TesteDTI
                 if (ConvertResult == false || DateTime.Compare(Value, Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"))) < 0)
                 {
                     ConvertResult = false;
-                    Menu.InvalidEntry();                                   
+                    View.InvalidEntry();                                   
                     EntryConsole = Console.ReadLine();
                 }           
 
@@ -99,34 +99,13 @@ namespace TesteDTI
                 if (ConvertResult == false || Value < 0)
                 {
                     ConvertResult = false;
-                    Menu.InvalidEntry();                  
+                    View.InvalidEntry();                  
                     EntryConsole = Console.ReadLine();
                 }               
 
             } while (ConvertResult == false);
 
             return Value;
-        }
-        #endregion
-
-        #region [ ClearLineFunctions ]
-        /// <summary>
-        /// Limpa a linha anterior do console e envia o cursor de digitação para a linha de cima.
-        /// </summary>
-        public static void ClearPrevLine()
-        {
-            Console.SetCursorPosition(9, Console.CursorTop - 1);
-            Console.Write(new string(' ', Console.WindowWidth - 1));
-            Console.SetCursorPosition(10, Console.CursorTop - 1);
-        }
-        /// <summary>
-        /// Limpa a linha atual do console e envia o cursor de digitação de volta para o começo da linha.
-        /// </summary>
-        public static void ClearLine()
-        {
-            Console.SetCursorPosition(0, Console.CursorTop);
-            Console.Write(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(0, Console.CursorTop - 1);
         }
         #endregion
     }

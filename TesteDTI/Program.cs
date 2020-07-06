@@ -8,9 +8,9 @@ namespace TesteDTI
         {
             try
             {
-                //Instancia um novo Controller e inicia o Menu de navegação.
+                //Instancia um novo Controller e inicia o View de navegação.
                 Controller MyController = new Controller();
-                MyController.MenuInit();              
+                MyController.ViewInit();              
 
                 Console.ReadKey();
             }
