@@ -20,7 +20,6 @@ namespace TesteDTI
                 Console.WriteLine(e);
                 Console.ReadKey();
             }
-
         }
     }
 }

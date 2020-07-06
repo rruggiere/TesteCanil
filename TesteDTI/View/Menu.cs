@@ -74,19 +74,19 @@ namespace TesteDTI
         public static void Option_1_NumSmallDogs()
         {
             ConsoleManager.ClearLine();
-            Console.WriteLine("\tQuantidade de cães pequenos: (Número inteiro não-negativo.)");
+            Console.WriteLine("\tQuantidade de cães pequenos: (Número inteiro positivo.)");
             Console.Write("\t- ");
         }
         public static void Option_1_NumBigDogs()
         {
             ConsoleManager.ClearLine();
-            Console.WriteLine("\tQuantidade de cães grandes: (Número inteiro não-negativo.)");
+            Console.WriteLine("\tQuantidade de cães grandes: (Número inteiro positivo.)");
             Console.Write("\t- ");
         }
-        public static void Option1Result(double Value, string PetShopName)
+        public static void Option1Result(string Value, string PetShopName)
         {
             ConsoleManager.ClearLine();
-            Console.WriteLine($"\n\tMelhor canil: {PetShopName} - Preço total: {Value}");
+            Console.WriteLine($"\n\tMelhor petshop: {PetShopName} - Preço total: {Value}");
         }
 
         #endregion

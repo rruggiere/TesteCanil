@@ -1,4 +1,6 @@
 ﻿
+using System.Globalization;
+
 namespace TesteDTI
 {
     public class PetShop
@@ -21,12 +23,12 @@ namespace TesteDTI
         {
             string PetShop = string.Empty;
 
-            PetShop += $"\tNome: {Name}\n";
-            PetShop += $"\tDistância: {Distance}\n";
-            PetShop += $"\tCachorro pequeno: {PriceSmallDog}\n";
-            PetShop += $"\tFim de semana: {SpecialDayPriceSmallDog}\n";
-            PetShop += $"\tCachorro grande: {PriceBigDog}\n";
-            PetShop += $"\tFim de semana: {SpecialDayPriceBigDog}\n";
+            PetShop += $"\tPetshop: {Name}\n";
+            PetShop += $"\tDistância: {Distance}m\n";
+            PetShop += $"\tCachorro pequeno: {PriceSmallDog.ToString("C", CultureInfo.CurrentCulture)}\n";
+            PetShop += $"\tFim de semana: {SpecialDayPriceSmallDog.ToString("C", CultureInfo.CurrentCulture)}\n";
+            PetShop += $"\tCachorro grande: {PriceBigDog.ToString("C", CultureInfo.CurrentCulture)}\n";
+            PetShop += $"\tFim de semana: {SpecialDayPriceBigDog.ToString("C", CultureInfo.CurrentCulture)}\n";
             return PetShop;
         }
     }

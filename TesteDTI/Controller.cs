@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace TesteDTI
 {
@@ -55,8 +56,7 @@ namespace TesteDTI
                 MenuInit();
 
                 #endregion
-            } while (!InputOption.Equals("Exit"));
-        
+            } while (!InputOption.Equals("EXIT"));        
         }
 
         #region [Option_1_Calcule]
@@ -73,7 +73,7 @@ namespace TesteDTI
             double result = NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Saturday) || NewDogWash.Date.DayOfWeek.Equals(DayOfWeek.Sunday) ? Result.CalculeSpecialDay(NewDogWash, out PetShopName)
                 : Result.CalculeWeek(NewDogWash, out PetShopName);
 
-            Menu.Option1Result(result, PetShopName);
+            Menu.Option1Result(result.ToString("C", CultureInfo.CurrentCulture), PetShopName);
         }
         #endregion
         /// <summary>
