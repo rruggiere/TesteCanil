@@ -76,9 +76,11 @@ namespace TesteDTI
         /// Retorna a lista de PetShops cadastrada no sistema. 
         /// </summary>
         /// <returns></returns>
+        #region [ ShowPetShops ]
         public List<PetShop> ShowPetShops()        
         {                  
            return _DBPetShop._petShopsList;           
         }
+        #endregion
     }
 }

@@ -37,22 +37,23 @@ namespace TesteDTI
                 {
                     MyDogWash = new DogWash();
 
-                    Menu.Option_1_Date();                    
+                    Menu.Option_1_Date();
                     MyDogWash.Date = ConsoleManager.DateVerify(Console.ReadLine());
 
-                    Menu.Option_1_NumSmallDogs();                  
+                    Menu.Option_1_NumSmallDogs();
                     MyDogWash.NumSmallDogs = ConsoleManager.NumDogsVerify(Console.ReadLine());
 
-                    Menu.Option_1_NumBigDogs();               
+                    Menu.Option_1_NumBigDogs();
                     MyDogWash.NumBigDogs = ConsoleManager.NumDogsVerify(Console.ReadLine());
 
-                    Option_1_Calcule(MyDogWash);                           
+                    Option_1_Calcule(MyDogWash);
                 }
                 else if (InputOption == 2) Menu.Option_2(Option_2());
-                
+              
                 Menu.AskExecuteAgain();
-                ConsoleManager.EndOrReturn(Console.ReadLine());
+                ConsoleManager.Exit(Console.ReadLine());
                 MenuInit();
+
                 #endregion
             } while (!InputOption.Equals("Exit"));
         

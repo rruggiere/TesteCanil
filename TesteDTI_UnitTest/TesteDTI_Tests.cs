@@ -17,7 +17,7 @@ namespace TesteDTI_UnitTest
 
             double Expected = 600.00;
 
-            Assert.AreEqual(Expected, Actual, 0.00, "Fail");
+            Assert.AreEqual(Expected, Actual, 0.00, "Inconsistent calcule.");
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace TesteDTI_UnitTest
 
             double Expected = 750.00;
 
-            Assert.AreEqual(Expected, Actual, 0.00, "Fail");
+            Assert.AreEqual(Expected, Actual, 0.00, "Inconsistent calcule.");
         }
         [TestMethod]
         public void TestCalculeSpecialDayDraw()
@@ -41,7 +41,7 @@ namespace TesteDTI_UnitTest
 
             string Expected = "ChowChawgas"; 
 
-            Assert.AreEqual(Expected, PetShopName, "", "Fail");
+            Assert.AreEqual(Expected, PetShopName, "", "Wrong PetShop.");
         }
         [TestMethod]
         public void TestCalculeWeekDraw()
@@ -52,7 +52,7 @@ namespace TesteDTI_UnitTest
 
             string Expected = "Vai Rex";
 
-            Assert.AreEqual(Expected, PetShopName, "", "Fail");
+            Assert.AreEqual(Expected, PetShopName, "", "Wrong PetShop.");
         }
 
         [TestMethod]
