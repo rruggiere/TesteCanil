@@ -118,18 +118,15 @@ namespace TesteDTI
             Console.SetCursorPosition(9, Console.CursorTop - 1);
             Console.Write(new string(' ', Console.WindowWidth - 1));
             Console.SetCursorPosition(10, Console.CursorTop - 1);
-
         }
         /// <summary>
         /// Limpa a linha atual do console e envia o cursor de digitação de volta para o começo da linha.
         /// </summary>
         public static void ClearLine()
         {
-
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, Console.CursorTop - 1);
-
         }
         #endregion
     }

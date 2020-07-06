@@ -30,7 +30,6 @@ namespace TesteDTI
             Console.WriteLine("\t\t1      |  Calcular melhor PetShop.");
             Console.WriteLine("\t\t2      |  PetShop's cadastradas.");
             Console.Write("\t- ");
-
         }
 
         /// <summary>

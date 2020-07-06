@@ -67,7 +67,6 @@ namespace TesteDTI
             PetShopName = _DBPetShop._petShopsList[FindIndex].Name;
             TotalValue = TemporaryValue;
 
-
             return TotalValue;
         }
         #endregion
