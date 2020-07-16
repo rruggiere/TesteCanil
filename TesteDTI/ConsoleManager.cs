@@ -16,7 +16,7 @@ namespace TesteDTI
         #region [ Exit ]
         public static void Exit(string EntryConsole)
         {
-            EntryConsole = EntryConsole.ToUpper().Trim();
+            EntryConsole = EntryConsole.ToUpper();
             if (EntryConsole.Equals("EXIT")) Environment.Exit(0);
         }
         #endregion
@@ -29,12 +29,14 @@ namespace TesteDTI
         #region [ OptionVerify ]
         public static int OptionVerify(string EntryConsole)
         {
-            Exit(EntryConsole);
-            
+            EntryConsole = EntryConsole.Trim();
+
             int Value;
            
             do
-            {                
+            {
+                Exit(EntryConsole);
+
                 ConvertResult = int.TryParse(EntryConsole, out Value);
 
                 if (ConvertResult == false || Value < 0 || Value > 2)
@@ -42,10 +44,7 @@ namespace TesteDTI
                     ConvertResult = false;
                     View.InvalidEntry();                   
                     EntryConsole = Console.ReadLine();
-                }
-
-                Exit(EntryConsole);
-                EntryConsole = EntryConsole.Trim();
+                }                         
 
             } while (ConvertResult == false);
 
@@ -60,22 +59,24 @@ namespace TesteDTI
         /// <returns></returns>
         #region [ DateVerify ]
         public static DateTime DateVerify(string EntryConsole)
-        {        
+        {
+            EntryConsole = EntryConsole.Trim();
+
             DateTime Value;
              
             do
-            {        
-                 ConvertResult = DateTime.TryParseExact(EntryConsole, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out Value);
+            {
+
+                Exit(EntryConsole);
+
+                ConvertResult = DateTime.TryParseExact(EntryConsole, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out Value);
 
                 if (ConvertResult == false || DateTime.Compare(Value, Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"))) < 0)
                 {
                     ConvertResult = false;
                     View.InvalidEntry();                                   
                     EntryConsole = Console.ReadLine();
-                }
-
-                Exit(EntryConsole);
-                EntryConsole = EntryConsole.Trim();
+                }                             
 
             } while(ConvertResult == false);
 
@@ -90,12 +91,14 @@ namespace TesteDTI
         #region[ NumDogsVerify ]
         public static int NumDogsVerify(string EntryConsole)
         {
-            Exit(EntryConsole);
+            EntryConsole = EntryConsole.Trim();
 
             int Value;
 
             do
-            {                          
+            {
+                Exit(EntryConsole);
+
                 ConvertResult = int.TryParse(EntryConsole, out Value);
 
                 if (ConvertResult == false || Value < 0)
@@ -103,10 +106,7 @@ namespace TesteDTI
                     ConvertResult = false;
                     View.InvalidEntry();                  
                     EntryConsole = Console.ReadLine();                 
-                }
-
-                Exit(EntryConsole);
-                EntryConsole = EntryConsole.Trim();
+                }  
 
             } while (ConvertResult == false);
 
