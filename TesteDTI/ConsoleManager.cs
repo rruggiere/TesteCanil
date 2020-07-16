@@ -43,7 +43,10 @@ namespace TesteDTI
                     View.InvalidEntry();                   
                     EntryConsole = Console.ReadLine();
                 }
-                
+
+                Exit(EntryConsole);
+                EntryConsole = EntryConsole.Trim();
+
             } while (ConvertResult == false);
 
             return Value;
@@ -57,11 +60,7 @@ namespace TesteDTI
         /// <returns></returns>
         #region [ DateVerify ]
         public static DateTime DateVerify(string EntryConsole)
-        {
-            Exit(EntryConsole);
-
-            EntryConsole = EntryConsole.Trim();
-
+        {        
             DateTime Value;
              
             do
@@ -73,7 +72,10 @@ namespace TesteDTI
                     ConvertResult = false;
                     View.InvalidEntry();                                   
                     EntryConsole = Console.ReadLine();
-                }           
+                }
+
+                Exit(EntryConsole);
+                EntryConsole = EntryConsole.Trim();
 
             } while(ConvertResult == false);
 
@@ -100,8 +102,11 @@ namespace TesteDTI
                 {
                     ConvertResult = false;
                     View.InvalidEntry();                  
-                    EntryConsole = Console.ReadLine();
-                }               
+                    EntryConsole = Console.ReadLine();                 
+                }
+
+                Exit(EntryConsole);
+                EntryConsole = EntryConsole.Trim();
 
             } while (ConvertResult == false);
 
